@@ -16,7 +16,9 @@ angular.module('angularjsNggridApp')
                                {name: 'Enos', age: 34}];
               $scope.gridOptions = {
               data: 'myData',
-              columnDefs: [{field:'name', displayName:'Name'}, {field:'age', displayName:'Age'}],
-              showGroupPanel: true
+              columnDefs: [{field:'name', displayName:'Name'},
+                           {field:'age', displayName:'Age', cellTemplate: '<div ng-class="{green: row.getProperty(col.field) > 30}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'}],
+              showGroupPanel: true,
+              jqueryUIDraggable: true
               };
   });
